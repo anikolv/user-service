@@ -1,10 +1,9 @@
-Running the application from source code: 
+Running the application from source code (requires maven and java): 
 -------------
 
-spring-boot:run
+mvn spring-boot:run
 
-Building and running executable JAR:
--------------
+OR
 
 mvn clean package
 
