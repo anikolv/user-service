@@ -1,4 +1,4 @@
-Running the application from source code: 
+Running the application from source code (requires JVM/JRE): 
 -------------
 
 mvnw spring-boot:run
