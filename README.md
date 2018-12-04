@@ -7,6 +7,7 @@ Building and running executable JAR:
 -------------
 
 mvn clean package
+
 java -jar target/user-service-1.0.0.jar
 
 Endpoints:
