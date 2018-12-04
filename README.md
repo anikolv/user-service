@@ -1,11 +1,11 @@
-Running the application from source code (requires maven and java): 
+Running the application from source code: 
 -------------
 
-mvn spring-boot:run
+mvnw spring-boot:run
 
 OR
 
-mvn clean package
+mvnw clean package
 
 java -jar target/user-service-1.0.0.jar
 
