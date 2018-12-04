@@ -13,7 +13,7 @@ Endpoints:
 -------------
 
 POST http://localhost:8080/user-service/api/user/create
-
+```json
 {
         "username": "username",
         "password": "password",
@@ -23,6 +23,7 @@ POST http://localhost:8080/user-service/api/user/create
         "email": "ivan@gmail.com"
 	
 }
+```
 
 GET http://localhost:8080/user-service/api/user/get?id=1
 
