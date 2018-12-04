@@ -1,5 +1,5 @@
 CREATE TABLE users (
-  id          INT(8) PRIMARY KEY,
+  id          INT(8) PRIMARY KEY AUTO_INCREMENT,
   username 	  VARCHAR(64),
   email 	  VARCHAR(64),
   first_name  VARCHAR(64),
