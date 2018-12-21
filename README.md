@@ -15,13 +15,9 @@ Endpoints:
 POST http://localhost:8080/user-service/api/user/create
 ```json
 {
-        "username": "username",
-        "password": "password",
         "firstName": "Ivan",
         "lastName": "Ivanov",
-        "phoneNumber": "123456",
         "email": "ivan@gmail.com"
-	
 }
 ```
 
