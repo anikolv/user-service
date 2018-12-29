@@ -1,5 +1,7 @@
 package com.unisofia.fmi.userservice.controller;
 
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
@@ -24,8 +26,12 @@ public class UserController {
 	@CrossOrigin(origins = "https://193.70.91.189:8443")
 	@PostMapping(value = "/create")
 	public Status saveUser(@RequestBody User user) {
-		userRepository.save(user);
-		return new Status(true);
+		Optional<User> optional = userRepository.findByToken(user.getToken());
+		if (!optional.isPresent()) {
+			userRepository.save(user);	
+			return new Status(true);
+		}
+		return new Status(false, "User already exists !");
 	}
 	
 	@CrossOrigin(origins = "https://193.70.91.189:8443")
