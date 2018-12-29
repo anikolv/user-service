@@ -1,6 +1,7 @@
 package com.unisofia.fmi.userservice.controller;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;
@@ -20,17 +21,20 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 	
+	@CrossOrigin(origins = "https://193.70.91.189:8443")
 	@PostMapping(value = "/create")
 	public Status saveUser(@RequestBody User user) {
 		userRepository.save(user);
 		return new Status(true);
 	}
 	
+	@CrossOrigin(origins = "https://193.70.91.189:8443")
 	@GetMapping(value = "/get")
 	public User getUser(@RequestParam Long id) throws UserNotFoundException {
 		return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException());
 	}
 	
+	@CrossOrigin(origins = "https://193.70.91.189:8443")
 	@GetMapping(value = "/getAll")
 	public Iterable<User> getUsers() {
 		return userRepository.findAll();
