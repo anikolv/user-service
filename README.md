@@ -12,7 +12,7 @@ java -jar target/user-service-1.0.0.jar
 Endpoints:
 -------------
 
-POST http://localhost:8080/user-service/api/user/create
+POST http://localhost:9090/user-service/api/user/create
 ```json
 {
         "firstName": "Ivan",
@@ -21,6 +21,6 @@ POST http://localhost:8080/user-service/api/user/create
 }
 ```
 
-GET http://localhost:8080/user-service/api/user/get?id=1
+GET http://localhost:9090/user-service/api/user/get?id=1
 
-GET http://localhost:8080/user-service/api/user/getAll
+GET http://localhost:9090/user-service/api/user/getAll
