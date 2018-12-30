@@ -12,15 +12,13 @@ java -jar target/user-service-1.0.0.jar
 Endpoints:
 -------------
 
-POST http://localhost:9090/user-service/api/user/create
+POST https://ec2-34-209-175-216.us-west-2.compute.amazonaws.com:8080/user-service/api/user/create
 ```json
 {
-        "firstName": "Ivan",
-        "lastName": "Ivanov",
-        "email": "ivan@gmail.com"
+        "name": "Alexander Nikolov",
+        "token": "1243521325"
 }
 ```
+GET https://ec2-34-209-175-216.us-west-2.compute.amazonaws.com:8080/user-service/api/user/get?id=1
 
-GET http://localhost:9090/user-service/api/user/get?id=1
-
-GET http://localhost:9090/user-service/api/user/getAll
+GET https://ec2-34-209-175-216.us-west-2.compute.amazonaws.com:8080/user-service/api/user/getAll
