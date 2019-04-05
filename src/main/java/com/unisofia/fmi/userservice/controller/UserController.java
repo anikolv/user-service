@@ -23,24 +23,21 @@ public class UserController {
 	@Autowired
 	private UserRepository userRepository;
 	
-	@CrossOrigin(origins = "https://193.70.91.189:8443")
 	@PostMapping(value = "/create")
 	public Status saveUser(@RequestBody User user) {
 		Optional<User> optional = userRepository.findByToken(user.getToken());
 		if (!optional.isPresent()) {
-			userRepository.save(user);	
-			return new Status(true);
+			User createdEntity = userRepository.save(user);	
+			return new Status(true, createdEntity.getId());
 		}
-		return new Status(false, "User already exists !");
+		return new Status(false, "User already exists !", optional.get().getId());
 	}
 	
-	@CrossOrigin(origins = "https://193.70.91.189:8443")
 	@GetMapping(value = "/get")
 	public User getUser(@RequestParam Long id) throws UserNotFoundException {
 		return userRepository.findById(id).orElseThrow(() -> new UserNotFoundException());
 	}
 	
-	@CrossOrigin(origins = "https://193.70.91.189:8443")
 	@GetMapping(value = "/getAll")
 	public Iterable<User> getUsers() {
 		return userRepository.findAll();
